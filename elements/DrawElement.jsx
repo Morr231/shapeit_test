@@ -72,13 +72,12 @@ export const DrawElement = (props) => {
 
     const prettyFigure = shapeit(currPoints);
     setCurrFigure(prettyFigure);
-
     
+    if (prettyFigure.name !== "vector") {
+      board.addText(prettyFigure.name);
+    }
     if (prettyFigure.length >= 3) {
       setNewPath(getPath(prettyFigure));
-      if (prettyFigure.name !== "vector") {
-        board.addText(prettyFigure.name);
-      }
     }
   };
 
